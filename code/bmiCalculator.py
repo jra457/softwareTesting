@@ -1,3 +1,10 @@
+"""
+Name: Jacob Adams
+NetID: jra457
+GitHub: jra457
+"""
+
+
 # Convert weight input
 def weight(inW):
   return inW * 0.45
