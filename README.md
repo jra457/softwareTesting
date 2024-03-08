@@ -7,6 +7,7 @@ Open the directory they are stored in through PowerShell.
 Necessary Downloads:
 
 $ pip install -U pytest
+
 $ pip install -U numpy
 
 Run Tests:
