@@ -1,14 +1,14 @@
-### Software Testing and Quality Assurance
+# Software Testing and Quality Assurance
 ## Assignment 2
 
-# Instructions:
+## Instructions:
 Download both the bmiCalculator.py and test_bmiCalculator.py files.
 Open the directory they are stored in through PowerShell.
-# Necessary Downloads:
+### Necessary Downloads:
 
 $ pip install -U pytest
 
 $ pip install -U numpy
 
-# Run Tests:
+### Run Tests:
 $ pytest test_bmiCalculator.py
