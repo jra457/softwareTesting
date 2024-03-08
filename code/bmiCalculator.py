@@ -12,6 +12,8 @@ def weight(inW):
 
   return newW
 
+
+
 # Convert height input
 def height(inH):
   newH = inH * 0.025
@@ -19,6 +21,8 @@ def height(inH):
   newH = newH ** 2
 
   return newH
+
+
 
 # Calculate bmi
 def bmi(w, h):
@@ -41,6 +45,8 @@ def bmiCategory(bmiVal):
   return category
 
 
+
+# Get weight
 def inputWeight():
 
   while True:
@@ -58,6 +64,9 @@ def inputWeight():
 
   return weight
 
+
+
+# Get height
 def inputHeight():
 
   while True:
@@ -74,6 +83,7 @@ def inputHeight():
     break
 
   return height
+
 
 
 def main():
