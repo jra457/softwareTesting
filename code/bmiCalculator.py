@@ -24,6 +24,23 @@ def height(inH):
 def bmi(w, h):
    return (weight(w) / height(h))
 
+def bmiCategory(bmiVal):
+
+  category = ""
+
+  #if (bmiVal < 18.5):
+  if (bmiVal < 18.4):
+    category = "Underweight"
+  elif (bmiVal < 24.9):
+    category = "Healthy weight"
+  elif(bmiVal < 29.9):
+    category = "Overweight"
+  else:
+    category = "Obese"
+
+  return category
+
+
 def inputWeight():
 
   while True:
@@ -69,14 +86,9 @@ def main():
 
   bmiVal = bmi(weight, height)
 
-  if (bmiVal < 18.5):
-    print(f"BMI: {bmiVal:.1f}, Category: Underweight")
-  elif (bmiVal < 24.9):
-    print(f"BMI: {bmiVal:.1f}, Category: Healthy weight")
-  elif(bmiVal < 29.9):
-    print(f"BMI: {bmiVal:.1f}, Category: Overweight")
-  else:
-    print(f"BMI: {bmiVal:.1f}, Category: Obese")
+  category = bmiCategory(bmiVal)
+
+  print(f"BMI: {bmiVal:.1f}, Category: {category}")
 
 
 
