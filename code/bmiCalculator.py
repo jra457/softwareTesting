@@ -2,12 +2,15 @@
 Name: Jacob Adams
 NetID: jra457
 GitHub: jra457
+Run: python3 bmiCalculator.py
 """
-
 
 # Convert weight input
 def weight(inW):
-  return inW * 0.45
+
+  newW = inW * 0.45
+
+  return newW
 
 # Convert height input
 def height(inH):
@@ -21,27 +24,59 @@ def height(inH):
 def bmi(w, h):
    return (weight(w) / height(h))
 
+def inputWeight():
+
+  while True:
+    print('Enter your weight in pounds:')
+    weight = input()
+    try:
+        weight = float(weight)
+    except:
+        print('Please input your weight in pounds.')
+        continue
+    if weight <= 0:
+        print('Please input a number greater than 0.')
+        continue
+    break
+
+  return weight
+
+def inputHeight():
+
+  while True:
+    print('Enter your height in inches:')
+    height = input()
+    try:
+        height = float(height)
+    except:
+        print('Please input your height in inches.')
+        continue
+    if height <= 0:
+        print('Please input a number greater than 0.')
+        continue
+    break
+
+  return height
+
 
 def main():
   
   print("BMI Calculator for Adults (20+ Years Old)")
 
-  # weight = input("Enter your weight in pounds: ")
-  weight = 125 # For testing
+  weight = inputWeight()
 
-  # height = input("Enter your height in inches: ")
-  height = 63 # For testing
+  height = inputHeight()
 
   bmiVal = bmi(weight, height)
 
   if (bmiVal < 18.5):
-    print(f"BMI: {bmiVal:.1f}, Cateogry: Underweight")
+    print(f"BMI: {bmiVal:.1f}, Category: Underweight")
   elif (bmiVal < 24.9):
-    print(f"BMI: {bmiVal:.1f}, Cateogry: Healthy weight")
+    print(f"BMI: {bmiVal:.1f}, Category: Healthy weight")
   elif(bmiVal < 29.9):
-    print(f"BMI: {bmiVal:.1f}, Cateogry: Overweight")
+    print(f"BMI: {bmiVal:.1f}, Category: Overweight")
   else:
-    print(f"BMI: {bmiVal:.1f}, Cateogry: Obesity")
+    print(f"BMI: {bmiVal:.1f}, Category: Obese")
 
 
 
