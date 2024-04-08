@@ -6,7 +6,7 @@ Run: pytest test_bmiCalculator.py
 """
 import unittest
 import numpy as np
-from bmiCalculator import weight, height, bmi, bmiCategory
+from bmiCalculator import weight, height, bmi_val, bmiCategory
 
 # Average male height: 5'9" = 69"
 
@@ -40,26 +40,26 @@ class TestCalculator(unittest.TestCase):
 
 
 
-  def test_bmi(self):
+  def test_bmi_val(self):
     # ~ Underweight Boundary Test
     # Test at weight = 122.1, height = 69"
-    self.assertEqual(bmi(122.1, 69), np.divide(np.multiply(122.1, 0.45), np.power(np.multiply(69, 0.025), 2)))
+    self.assertEqual(bmi_val(122.1, 69), np.divide(np.multiply(122.1, 0.45), np.power(np.multiply(69, 0.025), 2)))
 
     # ~ Healthy Weight Boundary Test
     # Test at weight = 122.4, height = 69"
-    self.assertEqual(bmi(122.4, 69), np.divide(np.multiply(122.4, 0.45), np.power(np.multiply(69, 0.025), 2)))
+    self.assertEqual(bmi_val(122.4, 69), np.divide(np.multiply(122.4, 0.45), np.power(np.multiply(69, 0.025), 2)))
     # Test at weight = 164.6, height = 69"
-    self.assertEqual(bmi(164.6, 69), np.divide(np.multiply(164.6, 0.45), np.power(np.multiply(69, 0.025), 2)))
+    self.assertEqual(bmi_val(164.6, 69), np.divide(np.multiply(164.6, 0.45), np.power(np.multiply(69, 0.025), 2)))
 
     # ~ Overweight Boundary Test
     # Test at weight = 164.7, height = 69"
-    self.assertEqual(bmi(164.7, 69), np.divide(np.multiply(164.7, 0.45), np.power(np.multiply(69, 0.025), 2)))
+    self.assertEqual(bmi_val(164.7, 69), np.divide(np.multiply(164.7, 0.45), np.power(np.multiply(69, 0.025), 2)))
     # Test at weight = 197.7, height = 69"
-    self.assertEqual(bmi(197.7, 69), np.divide(np.multiply(197.7, 0.45), np.power(np.multiply(69, 0.025), 2)))
+    self.assertEqual(bmi_val(197.7, 69), np.divide(np.multiply(197.7, 0.45), np.power(np.multiply(69, 0.025), 2)))
 
     # ~ Obese Boundary Test
     # Test at weight = 197.8, height = 69"
-    self.assertEqual(bmi(197.8, 69), np.divide(np.multiply(197.8, 0.45), np.power(np.multiply(69, 0.025), 2)))
+    self.assertEqual(bmi_val(197.8, 69), np.divide(np.multiply(197.8, 0.45), np.power(np.multiply(69, 0.025), 2)))
 
 
 
