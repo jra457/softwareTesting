@@ -25,8 +25,11 @@ def height(inH):
 
 
 # Calculate bmi
-def bmi(w, h):
-  bmiVal = weight(w) / height(h)
+def bmi_val(w, h):
+   return (weight(w) / height(h))
+
+def bmiCategory(bmiVal):
+
   category = ""
 
   #if (bmiVal < 18.5):
@@ -39,8 +42,14 @@ def bmi(w, h):
   else:
     category = "Obese"
 
-  return bmiVal, category
+  return category
 
+
+def bmi(w, h):
+   bmiVal = bmi_val(w, h)
+   category = bmiCategory(bmiVal)
+
+   return bmiVal, category
 
 
 # Get weight
@@ -83,7 +92,8 @@ def inputHeight():
 
 
 
-if __name__ == "__main__":  
+if __name__ == "__main__":
+  
   print("BMI Calculator for Adults (20+ Years Old)")
 
   weight = inputWeight()
