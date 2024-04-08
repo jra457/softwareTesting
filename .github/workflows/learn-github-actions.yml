@@ -28,9 +28,11 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest and coverage
       run: |
-        pytest --cov=./
-    - name: Coveralls GitHub Action
-      uses: coverallsapp/github-action@v2.2.3
+        pytest --cov=./ --cov-report=term-missing --cov-report=xml
+    - name: Generate LCOV report
+      run: |
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
       with:
-        path-to-lcov: ./coverage/lcov.info
         github-token: ${{ secrets.GITHUB_TOKEN }}
+        path-to-lcov: ./coverage/lcov.info 
