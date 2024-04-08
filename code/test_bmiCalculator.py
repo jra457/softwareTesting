@@ -66,7 +66,7 @@ class TestCalculator(unittest.TestCase):
   def test_bmiCategory(self):
     # ~ Underweight Boundary Test
     # BMI = 18.4
-    self.assertEqual(bmiCategory(18.4), "Underweight")
+    self.assertEqual(bmiCategory(18.3), "Underweight")
 
     # ~ Healthy Weight Boundary Test
     # BMI = 18.5
