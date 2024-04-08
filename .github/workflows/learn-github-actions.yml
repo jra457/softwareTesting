@@ -20,7 +20,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install coverage numpy # Add 'numpy' and 'coverage' here
+        pip install coverage numpy coveralls
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Run Tests with Coverage
       run: |
@@ -28,9 +28,7 @@ jobs:
         coverage run -m unittest discover
         coverage xml -o ../coverage.xml # Outputs the report to the root directory
     - name: Coveralls
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        path-to-lcov: ./coverage.xml
-        flag-name: unittests
-        parallel: false
+      env:
+        COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        coveralls
